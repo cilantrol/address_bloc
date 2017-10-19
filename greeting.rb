@@ -1,6 +1,8 @@
 def welcome
     ARGV.each do |x|
-        p "Hey #{arg}"
+        p "Hey #{x}"
     end
 
 end
+
+welcome
