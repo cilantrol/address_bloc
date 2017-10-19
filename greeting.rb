@@ -1,6 +1,7 @@
 def welcome
-    ARGV.each do |x|
-        p "Hey #{x}"
+  result = ARGV[1..-1]  
+    result.each do |y|
+        p "#{ARGV[0]} #{y}"
     end
 
 end
