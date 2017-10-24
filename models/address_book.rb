@@ -12,30 +12,35 @@ class AddressBook
 
 
     entries.each do |entry|
-    p entry
+    p " #{name} , #{entry.name}"
+    
       if name < entry.name
         break
       end
       index += 1
     end
     entries.insert(index, Entry.new(name, phone_number, email))
-    p entries
-    p entries.size
+
   end
   
   def remove_entry(name, phone_number, email)
-    # i know  we should do something like
+    entry = nil
     
-    ## find index of argument
+    @entries.each do |x|
+      if name == x.name || phone_number == x.phone_number || email == x.email
+        entry = x
+      end
+    end
     
-    # entries.pop(index, Entry.new(name, phone_number, email))  
-  
+    @entries.delete(entry)
   end
+  
 end
 
 r = AddressBook.new
+
 r.add_entry('Ada Lovelace', '010.012.1815', 'augusta.king@lovelace.com')
-r.add_entry('Ada Lovelace', '010.012.1815', 'augusta.king@lovelace.com')
-r.add_entry('Ada Lovelace', '010.012.1815', 'augusta.king@lovelace.com')
-r.add_entry('Ada Lovelace', '010.012.1815', 'augusta.king@lovelace.com')
+r.add_entry('tim', '010.012.1815', 'augusta.king@lovelace.com')
+r.add_entry('hihello', '010.012.1815', 'augusta.king@lovelace.com')
+r.add_entry('summer solstice', '010.012.1815', 'augusta.king@lovelace.com')
 #p r.inspect
