@@ -8,7 +8,7 @@ class MenuController
   end
    
   def main_menu
-    puts "Main Menu - #{address_book.entries.count} entries"
+    puts "Main Menu - #{@address_book.entries.count} entries"
     puts "1 - View all entries"
     puts "2 - Create an entry"
     puts "3 - Search for an entry"
@@ -86,7 +86,7 @@ class MenuController
     print "Please enter desired entry number: "
     input_num = gets.chomp.to_i
     
-    while input_num > address_book.entries.size
+    while input_num > @address_book.entries.size
       p "invalid entry number &| !exist"
       p " please re-enter desired entry number"
       input_num = gets.chomp.to_i
@@ -96,8 +96,7 @@ class MenuController
    # p "no @: #{address_book.entries}"
    # p "at:  #{@address_book.entries} "
     
-
-    return p address_book.entries[input_num-1]
+    return  @address_book.entries[input_num-1]
   end
   
   def read_csv
